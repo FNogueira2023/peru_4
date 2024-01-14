@@ -5,4 +5,4 @@ EXPOSE 8080
 COPY ./target/peru_4_jar/peru_4-1.0-SNAPSHOT.jar /usr/app/
 WORKDIR /usr/app
 
-ENTRYPOINT ["java","-jar","peru_4.jar"]
+ENTRYPOINT ["java","-jar","peru_4-1.0-SNAPSHOT.jar"]
