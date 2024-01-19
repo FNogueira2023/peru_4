@@ -4,7 +4,7 @@ pipeline{
     tools{
 // only maven,gradle,jdk
 // name of the installation in jenkins
-        maven "Maven"
+        maven "Maven 3.9.6"
     }
 
     parameters {
@@ -51,12 +51,12 @@ pipeline{
                 }
 
     }
-    post{
-        always{
-        //
-        }
-        failure{
-        }
+    // post{
+    //     always{
+    //     //
+    //     }
+    //     failure{
+    //     }
 
          }
 }
