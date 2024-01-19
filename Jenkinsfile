@@ -45,8 +45,8 @@ pipeline{
                     steps{
                         echo "deploying version ${params.VERSION}"
 //                         pasar credentials directo
-                        withCredentials([
-                                usernamePassword(credentials: "docker_hub"), usernameVariable: USER, passwordVariable: PWD ])
+                        // withCredentials([
+                        //         usernamePassword(credentials: "docker_hub"), usernameVariable: USER, passwordVariable: PWD ])
                     }
                 }
 
