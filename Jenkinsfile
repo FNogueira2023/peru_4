@@ -1,3 +1,5 @@
+def branchName = env.BRANCH_NAME
+
 pipeline{
     agent any
 
