@@ -2,11 +2,17 @@ def gv
 
 pipeline {
     agent any
+
+    parameters {
+        choice(name: "VERSION", choices: ["1.0.1","1.0.2","1.0.3"],description: "")
+    }
     
     stages {
         stage('Init') {
             steps {
-                gv = load "script.groovy"
+                script {
+                        gv = load "script.groovy"
+                }
             }
        }
 
@@ -14,7 +20,9 @@ pipeline {
             steps {
                 echo 'Building...'
                 // Add your build commands here
-                gv.buildApp()
+                script {
+                    gv.buildApp()
+                }
             }
         }
         
@@ -29,6 +37,10 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 // Add your deployment commands here
+
+                script{
+                    gv.deployApp()
+                }
             }
         }
     }
