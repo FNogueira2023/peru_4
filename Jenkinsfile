@@ -1,5 +1,3 @@
-def branchName = env.BRANCH_NAME
-
 pipeline{
     agent any
 
@@ -31,6 +29,10 @@ pipeline{
 
         stage("test"){
                     when{
+                        script {
+                            def branchName = env.BRANCH_NAME
+                        }                           
+                        
                         expression {
                             BRANCH_NAME == 'dev' || BRANCH_NAME == 'test'
                         }
