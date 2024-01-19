@@ -28,11 +28,11 @@ pipeline{
         }
 
         stage("test"){
-                    when{
-                        script {
+                    script {
                             def branchName = env.BRANCH_NAME
-                        }                           
-                        
+                        }
+            
+                    when{                     
                         expression {
                             BRANCH_NAME == 'dev' || BRANCH_NAME == 'test'
                         }
