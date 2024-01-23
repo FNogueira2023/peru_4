@@ -25,6 +25,16 @@ pipeline {
                 }
             }
         }
+
+           stage('BuildImage') {
+            steps {
+                echo 'Building...'
+                // Add your build commands here
+                script {
+                    gv.buildImage()
+                }
+            }
+        }
         
         stage('Test') {
             steps {
