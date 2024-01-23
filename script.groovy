@@ -1,5 +1,6 @@
 def buildApp(){
     echo "building the app..."
+    sh 'clean install'
 }
 
 def deployApp(){
