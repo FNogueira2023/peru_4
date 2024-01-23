@@ -3,10 +3,6 @@ def gv
 pipeline {
     agent any
 
-    tools {
-        maven "Maven 3.9.6"
-    }
-
     parameters {
         choice(name: "VERSION", choices: ["1.0.1","1.0.2","1.0.3"],description: "")
     }
@@ -26,6 +22,16 @@ pipeline {
                 // Add your build commands here
                 script {
                     gv.buildApp()
+                }
+            }
+        }
+
+           stage('BuildImage') {
+            steps {
+                echo 'Building...'
+                // Add your build commands here
+                script {
+                    gv.buildImage()
                 }
             }
         }
