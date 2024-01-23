@@ -1,6 +1,6 @@
 def buildApp(){
     echo 'building the app...'
-    sh 'clean install'
+    sh 'mvn clean install'
 }
 
 def buildImage(){
