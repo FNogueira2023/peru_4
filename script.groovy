@@ -14,5 +14,6 @@ def buildImage() {
 def deployApp() {
     echo "deploying version ${params.Version }" +
     echo "agregando algo nuevo"
+    echo "agregando algo mas nuevo"
 }
 return this
