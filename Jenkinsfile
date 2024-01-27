@@ -18,7 +18,6 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building...'
                 // Add your build commands here
                 script {
                     gv.buildApp()
